@@ -1,0 +1,17 @@
+{
+  "name": "punycode-a-label-decoder",
+  "version": "0.1.0",
+  "description": "Decodes xn-- prefixed IDN A-labels into Unicode using RFC 3492 with zero dependencies",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "BSD-3-Clause",
+  "dependencies": {}
+}
