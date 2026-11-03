@@ -22,3 +22,10 @@ This library decodes only. It does not perform full IDNA 2008 validity checking 
 ## Awkward edge
 
 A-labels store any ASCII basic code points before the final `-` delimiter. A label like `xn--abc-` decodes to the plain string `abc` (no tail). A label like `xn--abc123-` decodes to `abc123`. If you expect every decoded result to contain non-ASCII characters, it will not — the basic portion is returned verbatim.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
